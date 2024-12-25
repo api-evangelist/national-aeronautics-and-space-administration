@@ -23,7 +23,6 @@ apis:
     properties:
       - type: Documentation
         url: https://api.nasa.gov/
-    overlays: []
     aid: >-
       the-national-aeronautics-and-space-administration-nasa:the-national-aeronautics-and-space-administration-nasa-api
 common:
