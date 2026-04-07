@@ -10,9 +10,9 @@ created: '2024-01-01'
 modified: '2026-03-16'
 specificationVersion: '0.19'
 tags:
-  - Space
   - Government
   - Science
+  - Space
 apis:
   - aid: national-aeronautics-and-space-administration:nasa-api
     name: The National Aeronautics and Space Administration (NASA) API
@@ -23,8 +23,8 @@ apis:
     humanURL: https://api.nasa.gov/
     baseURL: https://api.nasa.gov/
     tags:
-      - Space
       - Science
+      - Space
     properties:
       - type: Documentation
         url: https://api.nasa.gov/
