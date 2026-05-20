@@ -198,6 +198,8 @@ apis:
       - type: Documentation
         url: https://ssd-api.jpl.nasa.gov/doc/
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/nasa
   - type: Portal
     url: https://api.nasa.gov/
   - type: Website
