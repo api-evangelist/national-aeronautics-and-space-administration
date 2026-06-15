@@ -1,0 +1,354 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NASA Open APIs",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "APOD",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Astronomy Picture of the Day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/planetary/apod",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Astronomy Picture of the Day"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NeoWs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List near-earth objects by date range",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/neo/rest/v1/feed",
+            "params": [
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List near-earth objects by date range"
+        },
+        {
+          "info": {
+            "name": "Lookup a specific near-earth object",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/neo/rest/v1/neo/:asteroid_id",
+            "params": [
+              {
+                "name": "asteroid_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lookup a specific near-earth object"
+        },
+        {
+          "info": {
+            "name": "Browse the near-earth object dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/neo/rest/v1/neo/browse"
+          },
+          "docs": "Browse the near-earth object dataset"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "DONKI",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Coronal Mass Ejection events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/DONKI/CME",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Coronal Mass Ejection events"
+        },
+        {
+          "info": {
+            "name": "Geomagnetic Storm events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/DONKI/GST",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Geomagnetic Storm events"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Earth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Landsat 8 imagery for a lat/lon and date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/planetary/earth/imagery",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dim",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Landsat 8 imagery for a lat/lon and date"
+        },
+        {
+          "info": {
+            "name": "Landsat 8 asset metadata for a lat/lon and date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/planetary/earth/assets",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Landsat 8 asset metadata for a lat/lon and date"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "EPIC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Most recent natural-color EPIC images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/EPIC/api/natural"
+          },
+          "docs": "Most recent natural-color EPIC images"
+        },
+        {
+          "info": {
+            "name": "Most recent enhanced-color EPIC images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/EPIC/api/enhanced"
+          },
+          "docs": "Most recent enhanced-color EPIC images"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Mars Rover Photos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List photos taken by a Mars rover on a given Sol or Earth date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/:rover/photos",
+            "params": [
+              {
+                "name": "rover",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sol",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "earth_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "camera",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List photos taken by a Mars rover on a given Sol or Earth date"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "InSight",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Per-Sol Mars weather summary from the InSight lander",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/insight_weather/",
+            "params": [
+              {
+                "name": "ver",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "feedtype",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Per-Sol Mars weather summary from the InSight lander"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
