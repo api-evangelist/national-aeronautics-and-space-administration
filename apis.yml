@@ -6,7 +6,7 @@ description: >-
   hosts a federated set of APIs that make NASA imagery, science, and mission
   data accessible to application developers.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://api.nasa.gov/
 created: '2024-01-01'
 modified: '2026-04-28'
