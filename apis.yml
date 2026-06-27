@@ -204,7 +204,7 @@ common:
     url: https://api.nasa.gov/
   - type: Website
     url: https://www.nasa.gov/
-  - type: SignUp
+  - type: Signup
     url: https://api.nasa.gov/#signUp
   - type: TermsOfService
     url: https://www.nasa.gov/about/highlights/HP_Privacy.html
