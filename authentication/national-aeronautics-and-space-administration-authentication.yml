@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/national-aeronautics-and-space-administration-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKeyQuery
+  type: apiKey
+  in: query
+  parameter: api_key
+  description: NASA API key (DEMO_KEY available for limited use).
+  sources:
+  - openapi/national-aeronautics-and-space-administration-openapi.yml

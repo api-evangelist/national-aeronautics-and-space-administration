@@ -198,6 +198,10 @@ apis:
       - type: Documentation
         url: https://ssd-api.jpl.nasa.gov/doc/
 common:
+  - type: DomainSecurity
+    url: security/national-aeronautics-and-space-administration-domain-security.yml
+  - type: Authentication
+    url: authentication/national-aeronautics-and-space-administration-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/nasa
   - type: Portal
@@ -208,6 +212,8 @@ common:
     url: https://api.nasa.gov/#signUp
   - type: TermsOfService
     url: https://www.nasa.gov/about/highlights/HP_Privacy.html
+  - url: https://www.nasa.gov/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
