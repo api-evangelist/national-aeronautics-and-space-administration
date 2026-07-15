@@ -198,6 +198,8 @@ apis:
       - type: Documentation
         url: https://ssd-api.jpl.nasa.gov/doc/
 common:
+  - type: AgenticAccess
+    url: agentic-access/national-aeronautics-and-space-administration-agentic-access.yml
   - type: DomainSecurity
     url: security/national-aeronautics-and-space-administration-domain-security.yml
   - type: Authentication
