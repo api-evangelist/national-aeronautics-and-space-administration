@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: NASA Open APIs APOD NeoWs API
+  description: 'The api.nasa.gov portal hosts a federated set of NASA APIs covering
+
+    imagery, science, and mission data. All endpoints authenticate via
+
+    the `api_key` query parameter (DEMO_KEY is available for limited
+
+    use). This specification covers commonly used endpoints across
+
+    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.
+
+    '
+  version: '1.0'
+servers:
+- url: https://api.nasa.gov
+  description: NASA api.nasa.gov gateway
+security:
+- apiKeyQuery: []
+tags:
+- name: NeoWs
+  description: Near Earth Object Web Service.
+paths:
+  /neo/rest/v1/feed:
+    get:
+      tags:
+      - NeoWs
+      summary: List near-earth objects by date range
+      operationId: neoFeed
+      parameters:
+      - in: query
+        name: start_date
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: end_date
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: Near-earth object feed.
+          content:
+            application/json:
+              schema:
+                type: object
+  /neo/rest/v1/neo/{asteroid_id}:
+    get:
+      tags:
+      - NeoWs
+      summary: Lookup a specific near-earth object
+      operationId: neoLookup
+      parameters:
+      - in: path
+        name: asteroid_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Near-earth object details.
+          content:
+            application/json:
+              schema:
+                type: object
+  /neo/rest/v1/neo/browse:
+    get:
+      tags:
+      - NeoWs
+      summary: Browse the near-earth object dataset
+      operationId: neoBrowse
+      responses:
+        '200':
+          description: Paginated NEO dataset.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: NASA API key (DEMO_KEY available for limited use).

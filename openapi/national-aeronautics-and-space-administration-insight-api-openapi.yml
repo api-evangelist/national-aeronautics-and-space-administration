@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: NASA Open APIs APOD InSight API
+  description: 'The api.nasa.gov portal hosts a federated set of NASA APIs covering
+
+    imagery, science, and mission data. All endpoints authenticate via
+
+    the `api_key` query parameter (DEMO_KEY is available for limited
+
+    use). This specification covers commonly used endpoints across
+
+    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.
+
+    '
+  version: '1.0'
+servers:
+- url: https://api.nasa.gov
+  description: NASA api.nasa.gov gateway
+security:
+- apiKeyQuery: []
+tags:
+- name: InSight
+  description: Mars weather from the InSight lander.
+paths:
+  /insight_weather/:
+    get:
+      tags:
+      - InSight
+      summary: Per-Sol Mars weather summary from the InSight lander
+      operationId: insightWeather
+      parameters:
+      - in: query
+        name: ver
+        schema:
+          type: string
+          default: '1.0'
+      - in: query
+        name: feedtype
+        schema:
+          type: string
+          default: json
+      responses:
+        '200':
+          description: Mars weather summary.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: NASA API key (DEMO_KEY available for limited use).

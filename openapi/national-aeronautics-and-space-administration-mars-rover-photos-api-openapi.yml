@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: NASA Open APIs APOD Mars Rover Photos API
+  description: 'The api.nasa.gov portal hosts a federated set of NASA APIs covering
+
+    imagery, science, and mission data. All endpoints authenticate via
+
+    the `api_key` query parameter (DEMO_KEY is available for limited
+
+    use). This specification covers commonly used endpoints across
+
+    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.
+
+    '
+  version: '1.0'
+servers:
+- url: https://api.nasa.gov
+  description: NASA api.nasa.gov gateway
+security:
+- apiKeyQuery: []
+tags:
+- name: Mars Rover Photos
+  description: Photos from Curiosity, Opportunity, Perseverance, and Spirit.
+paths:
+  /mars-photos/api/v1/rovers/{rover}/photos:
+    get:
+      tags:
+      - Mars Rover Photos
+      summary: List photos taken by a Mars rover on a given Sol or Earth date
+      operationId: marsRoverPhotos
+      parameters:
+      - in: path
+        name: rover
+        required: true
+        schema:
+          type: string
+          enum:
+          - curiosity
+          - opportunity
+          - perseverance
+          - spirit
+      - in: query
+        name: sol
+        schema:
+          type: integer
+      - in: query
+        name: earth_date
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: camera
+        schema:
+          type: string
+      - in: query
+        name: page
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Photos.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: NASA API key (DEMO_KEY available for limited use).

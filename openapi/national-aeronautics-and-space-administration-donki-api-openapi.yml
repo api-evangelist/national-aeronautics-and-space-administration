@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: NASA Open APIs APOD DONKI API
+  description: 'The api.nasa.gov portal hosts a federated set of NASA APIs covering
+
+    imagery, science, and mission data. All endpoints authenticate via
+
+    the `api_key` query parameter (DEMO_KEY is available for limited
+
+    use). This specification covers commonly used endpoints across
+
+    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.
+
+    '
+  version: '1.0'
+servers:
+- url: https://api.nasa.gov
+  description: NASA api.nasa.gov gateway
+security:
+- apiKeyQuery: []
+tags:
+- name: DONKI
+  description: Space Weather Database Of Notifications, Knowledge, Information.
+paths:
+  /DONKI/CME:
+    get:
+      tags:
+      - DONKI
+      summary: Coronal Mass Ejection events
+      operationId: donkiCme
+      parameters:
+      - in: query
+        name: startDate
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: endDate
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: CME events.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /DONKI/GST:
+    get:
+      tags:
+      - DONKI
+      summary: Geomagnetic Storm events
+      operationId: donkiGst
+      parameters:
+      - in: query
+        name: startDate
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: endDate
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: GST events.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: NASA API key (DEMO_KEY available for limited use).

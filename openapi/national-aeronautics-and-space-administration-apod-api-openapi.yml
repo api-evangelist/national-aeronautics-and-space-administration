@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: NASA Open APIs APOD API
+  description: 'The api.nasa.gov portal hosts a federated set of NASA APIs covering
+
+    imagery, science, and mission data. All endpoints authenticate via
+
+    the `api_key` query parameter (DEMO_KEY is available for limited
+
+    use). This specification covers commonly used endpoints across
+
+    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.
+
+    '
+  version: '1.0'
+servers:
+- url: https://api.nasa.gov
+  description: NASA api.nasa.gov gateway
+security:
+- apiKeyQuery: []
+tags:
+- name: APOD
+  description: Astronomy Picture of the Day.
+paths:
+  /planetary/apod:
+    get:
+      tags:
+      - APOD
+      summary: Astronomy Picture of the Day
+      operationId: getApod
+      parameters:
+      - in: query
+        name: date
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: start_date
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: end_date
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: count
+        schema:
+          type: integer
+      - in: query
+        name: thumbs
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: APOD payload.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: NASA API key (DEMO_KEY available for limited use).
