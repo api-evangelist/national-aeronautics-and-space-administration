@@ -1,0 +1,26 @@
+{
+  "provider": "national-aeronautics-and-space-administration",
+  "sources": [
+    "national-aeronautics-and-space-administration-apod-api-openapi.yml",
+    "national-aeronautics-and-space-administration-donki-api-openapi.yml",
+    "national-aeronautics-and-space-administration-earth-api-openapi.yml",
+    "national-aeronautics-and-space-administration-epic-api-openapi.yml",
+    "national-aeronautics-and-space-administration-insight-api-openapi.yml",
+    "national-aeronautics-and-space-administration-mars-rover-photos-api-openapi.yml",
+    "national-aeronautics-and-space-administration-neows-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-aeronautics-and-space-administration-apod-api-openapi.yml",
+    "national-aeronautics-and-space-administration-donki-api-openapi.yml",
+    "national-aeronautics-and-space-administration-earth-api-openapi.yml",
+    "national-aeronautics-and-space-administration-epic-api-openapi.yml",
+    "national-aeronautics-and-space-administration-insight-api-openapi.yml",
+    "national-aeronautics-and-space-administration-mars-rover-photos-api-openapi.yml",
+    "national-aeronautics-and-space-administration-neows-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

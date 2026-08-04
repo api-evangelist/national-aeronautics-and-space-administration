@@ -1,0 +1,321 @@
+openapi: 3.1.0
+info:
+  title: NASA Open APIs
+  description: |
+    The api.nasa.gov portal hosts a federated set of NASA APIs covering
+    imagery, science, and mission data. All endpoints authenticate via
+    the `api_key` query parameter (DEMO_KEY is available for limited
+    use). This specification covers commonly used endpoints across
+    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.
+  version: '1.0'
+servers:
+  - url: https://api.nasa.gov
+    description: NASA api.nasa.gov gateway
+security:
+  - apiKeyQuery: []
+tags:
+  - name: APOD
+    description: Astronomy Picture of the Day.
+  - name: NeoWs
+    description: Near Earth Object Web Service.
+  - name: DONKI
+    description: Space Weather Database Of Notifications, Knowledge, Information.
+  - name: Earth
+    description: Earth imagery and assets.
+  - name: EPIC
+    description: Earth Polychromatic Imaging Camera.
+  - name: Mars Rover Photos
+    description: Photos from Curiosity, Opportunity, Perseverance, and Spirit.
+  - name: InSight
+    description: Mars weather from the InSight lander.
+paths:
+  /planetary/apod:
+    get:
+      tags: [APOD]
+      summary: Astronomy Picture of the Day
+      operationId: getApod
+      parameters:
+        - in: query
+          name: date
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: start_date
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: end_date
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: count
+          schema:
+            type: integer
+        - in: query
+          name: thumbs
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: APOD payload.
+          content:
+            application/json:
+              schema:
+                type: object
+  /neo/rest/v1/feed:
+    get:
+      tags: [NeoWs]
+      summary: List near-earth objects by date range
+      operationId: neoFeed
+      parameters:
+        - in: query
+          name: start_date
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: end_date
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Near-earth object feed.
+          content:
+            application/json:
+              schema:
+                type: object
+  /neo/rest/v1/neo/{asteroid_id}:
+    get:
+      tags: [NeoWs]
+      summary: Lookup a specific near-earth object
+      operationId: neoLookup
+      parameters:
+        - in: path
+          name: asteroid_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Near-earth object details.
+          content:
+            application/json:
+              schema:
+                type: object
+  /neo/rest/v1/neo/browse:
+    get:
+      tags: [NeoWs]
+      summary: Browse the near-earth object dataset
+      operationId: neoBrowse
+      responses:
+        '200':
+          description: Paginated NEO dataset.
+          content:
+            application/json:
+              schema:
+                type: object
+  /DONKI/CME:
+    get:
+      tags: [DONKI]
+      summary: Coronal Mass Ejection events
+      operationId: donkiCme
+      parameters:
+        - in: query
+          name: startDate
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: endDate
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: CME events.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /DONKI/GST:
+    get:
+      tags: [DONKI]
+      summary: Geomagnetic Storm events
+      operationId: donkiGst
+      parameters:
+        - in: query
+          name: startDate
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: endDate
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: GST events.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /planetary/earth/imagery:
+    get:
+      tags: [Earth]
+      summary: Landsat 8 imagery for a lat/lon and date
+      operationId: earthImagery
+      parameters:
+        - in: query
+          name: lat
+          required: true
+          schema:
+            type: number
+        - in: query
+          name: lon
+          required: true
+          schema:
+            type: number
+        - in: query
+          name: date
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: dim
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Earth imagery.
+  /planetary/earth/assets:
+    get:
+      tags: [Earth]
+      summary: Landsat 8 asset metadata for a lat/lon and date
+      operationId: earthAssets
+      parameters:
+        - in: query
+          name: lat
+          required: true
+          schema:
+            type: number
+        - in: query
+          name: lon
+          required: true
+          schema:
+            type: number
+        - in: query
+          name: date
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Asset metadata.
+          content:
+            application/json:
+              schema:
+                type: object
+  /EPIC/api/natural:
+    get:
+      tags: [EPIC]
+      summary: Most recent natural-color EPIC images
+      operationId: epicNatural
+      responses:
+        '200':
+          description: EPIC natural images.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /EPIC/api/enhanced:
+    get:
+      tags: [EPIC]
+      summary: Most recent enhanced-color EPIC images
+      operationId: epicEnhanced
+      responses:
+        '200':
+          description: EPIC enhanced images.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /mars-photos/api/v1/rovers/{rover}/photos:
+    get:
+      tags: [Mars Rover Photos]
+      summary: List photos taken by a Mars rover on a given Sol or Earth date
+      operationId: marsRoverPhotos
+      parameters:
+        - in: path
+          name: rover
+          required: true
+          schema:
+            type: string
+            enum: [curiosity, opportunity, perseverance, spirit]
+        - in: query
+          name: sol
+          schema:
+            type: integer
+        - in: query
+          name: earth_date
+          schema:
+            type: string
+            format: date
+        - in: query
+          name: camera
+          schema:
+            type: string
+        - in: query
+          name: page
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Photos.
+          content:
+            application/json:
+              schema:
+                type: object
+  /insight_weather/:
+    get:
+      tags: [InSight]
+      summary: Per-Sol Mars weather summary from the InSight lander
+      operationId: insightWeather
+      parameters:
+        - in: query
+          name: ver
+          schema:
+            type: string
+            default: '1.0'
+        - in: query
+          name: feedtype
+          schema:
+            type: string
+            default: json
+      responses:
+        '200':
+          description: Mars weather summary.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: NASA API key (DEMO_KEY available for limited use).
