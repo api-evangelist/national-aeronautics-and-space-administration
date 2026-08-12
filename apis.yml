@@ -285,6 +285,13 @@ apis:
   - type: OpenAPI
     url: openapi/national-aeronautics-and-space-administration-neows-api-openapi.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/nasa/apod-api/issues
+  - type: Releases
+    url: https://github.com/nasa/apod-api/releases
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/nasa/apod-api/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/national-aeronautics-and-space-administration-agentic-access.yml
   - type: DomainSecurity
