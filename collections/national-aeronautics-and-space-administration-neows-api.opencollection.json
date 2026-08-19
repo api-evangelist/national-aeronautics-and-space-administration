@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NASA Open APIs APOD NeoWs API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NeoWs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List near-earth objects by date range",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/neo/rest/v1/feed",
+            "params": [
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List near-earth objects by date range"
+        },
+        {
+          "info": {
+            "name": "Lookup a specific near-earth object",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/neo/rest/v1/neo/:asteroid_id",
+            "params": [
+              {
+                "name": "asteroid_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lookup a specific near-earth object"
+        },
+        {
+          "info": {
+            "name": "Browse the near-earth object dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/neo/rest/v1/neo/browse"
+          },
+          "docs": "Browse the near-earth object dataset"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

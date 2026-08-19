@@ -1,0 +1,322 @@
+{
+  "item": [
+    {
+      "id": "3b45d4b4-76d0-43cd-820d-5f948933f5f3",
+      "name": "NeoWs",
+      "description": {
+        "content": "Near Earth Object Web Service.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e46b31ed-59ed-4a4d-8289-473c87eabe0b",
+          "name": "List near-earth objects by date range",
+          "request": {
+            "name": "List near-earth objects by date range",
+            "description": {},
+            "url": {
+              "path": [
+                "neo",
+                "rest",
+                "v1",
+                "feed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5edf6c7f-d510-4d98-947c-7ae4b55fa055",
+              "name": "Near-earth object feed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "neo",
+                    "rest",
+                    "v1",
+                    "feed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b658fcb5-cc52-4930-b4bb-1f10702ef4f5",
+          "name": "Lookup a specific near-earth object",
+          "request": {
+            "name": "Lookup a specific near-earth object",
+            "description": {},
+            "url": {
+              "path": [
+                "neo",
+                "rest",
+                "v1",
+                "neo",
+                ":asteroid_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "asteroid_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7ed21b7-3d6b-4506-8628-114a80c23815",
+              "name": "Near-earth object details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "neo",
+                    "rest",
+                    "v1",
+                    "neo",
+                    ":asteroid_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "asteroid_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b0a51cb-7385-4684-902c-eb21343d17dc",
+          "name": "Browse the near-earth object dataset",
+          "request": {
+            "name": "Browse the near-earth object dataset",
+            "description": {},
+            "url": {
+              "path": [
+                "neo",
+                "rest",
+                "v1",
+                "neo",
+                "browse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "908faa23-2bd0-41a3-9280-46ae222ac2db",
+              "name": "Paginated NEO dataset.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "neo",
+                    "rest",
+                    "v1",
+                    "neo",
+                    "browse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nasa.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5f541a46-8cf6-4c28-aa12-7ac3cfed900a",
+    "name": "NASA Open APIs APOD NeoWs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The api.nasa.gov portal hosts a federated set of NASA APIs covering\nimagery, science, and mission data. All endpoints authenticate via\nthe `api_key` query parameter (DEMO_KEY is available for limited\nuse). This specification covers commonly used endpoints across\nAPOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.\n",
+      "type": "text/plain"
+    }
+  }
+}

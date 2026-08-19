@@ -1,0 +1,184 @@
+{
+  "item": [
+    {
+      "id": "9f38ba4b-0da1-410c-a990-521bb7ff7a8c",
+      "name": "Mars Rover Photos",
+      "description": {
+        "content": "Photos from Curiosity, Opportunity, Perseverance, and Spirit.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cbca94d9-16fa-4bfa-baaa-c762e3589e69",
+          "name": "List photos taken by a Mars rover on a given Sol or Earth date",
+          "request": {
+            "name": "List photos taken by a Mars rover on a given Sol or Earth date",
+            "description": {},
+            "url": {
+              "path": [
+                "mars-photos",
+                "api",
+                "v1",
+                "rovers",
+                ":rover",
+                "photos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sol",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "earth_date",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "camera",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "rover",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "adcf8363-049d-4d9d-adfb-d0b4af927851",
+              "name": "Photos.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mars-photos",
+                    "api",
+                    "v1",
+                    "rovers",
+                    ":rover",
+                    "photos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sol",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "earth_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "camera",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "rover",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nasa.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2dc9d126-7b9b-432d-a85b-be531f921279",
+    "name": "NASA Open APIs APOD Mars Rover Photos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The api.nasa.gov portal hosts a federated set of NASA APIs covering\nimagery, science, and mission data. All endpoints authenticate via\nthe `api_key` query parameter (DEMO_KEY is available for limited\nuse). This specification covers commonly used endpoints across\nAPOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.\n",
+      "type": "text/plain"
+    }
+  }
+}

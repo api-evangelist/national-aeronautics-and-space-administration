@@ -1,0 +1,142 @@
+{
+  "item": [
+    {
+      "id": "e4f64977-da0e-424a-bc88-7ea5b962a519",
+      "name": "InSight",
+      "description": {
+        "content": "Mars weather from the InSight lander.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "985a83a9-c427-4160-a6ee-5f95a24fd430",
+          "name": "Per-Sol Mars weather summary from the InSight lander",
+          "request": {
+            "name": "Per-Sol Mars weather summary from the InSight lander",
+            "description": {},
+            "url": {
+              "path": [
+                "insight_weather",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ver",
+                  "value": "1.0"
+                },
+                {
+                  "disabled": false,
+                  "key": "feedtype",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "673d9682-6149-4433-bdd8-7cdab65d24a5",
+              "name": "Mars weather summary.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "insight_weather",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ver",
+                      "value": "1.0"
+                    },
+                    {
+                      "key": "feedtype",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nasa.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c6855915-cfd2-46dc-bde8-106396bdfeab",
+    "name": "NASA Open APIs APOD InSight API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The api.nasa.gov portal hosts a federated set of NASA APIs covering\nimagery, science, and mission data. All endpoints authenticate via\nthe `api_key` query parameter (DEMO_KEY is available for limited\nuse). This specification covers commonly used endpoints across\nAPOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.\n",
+      "type": "text/plain"
+    }
+  }
+}

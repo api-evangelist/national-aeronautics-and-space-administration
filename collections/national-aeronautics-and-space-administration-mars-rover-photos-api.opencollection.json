@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NASA Open APIs APOD Mars Rover Photos API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mars Rover Photos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List photos taken by a Mars rover on a given Sol or Earth date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/mars-photos/api/v1/rovers/:rover/photos",
+            "params": [
+              {
+                "name": "rover",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sol",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "earth_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "camera",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List photos taken by a Mars rover on a given Sol or Earth date"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

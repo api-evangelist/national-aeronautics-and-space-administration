@@ -1,0 +1,201 @@
+{
+  "item": [
+    {
+      "id": "7dbed69f-2cf5-4bf8-8666-d72ebdbef808",
+      "name": "EPIC",
+      "description": {
+        "content": "Earth Polychromatic Imaging Camera.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "631c26f0-0313-413a-9eb5-23c5d045fe32",
+          "name": "Most recent natural-color EPIC images",
+          "request": {
+            "name": "Most recent natural-color EPIC images",
+            "description": {},
+            "url": {
+              "path": [
+                "EPIC",
+                "api",
+                "natural"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "acba4443-98a4-4c28-af99-06d3f9ff1a8b",
+              "name": "EPIC natural images.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EPIC",
+                    "api",
+                    "natural"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d3d31f1-2709-45dd-b2c0-a0f8a77c9406",
+          "name": "Most recent enhanced-color EPIC images",
+          "request": {
+            "name": "Most recent enhanced-color EPIC images",
+            "description": {},
+            "url": {
+              "path": [
+                "EPIC",
+                "api",
+                "enhanced"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cf8eb69-cd0c-45e3-bcc2-e51abadfd768",
+              "name": "EPIC enhanced images.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EPIC",
+                    "api",
+                    "enhanced"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nasa.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1982f236-78d4-412b-919e-67b1a129ac5c",
+    "name": "NASA Open APIs APOD EPIC API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The api.nasa.gov portal hosts a federated set of NASA APIs covering\nimagery, science, and mission data. All endpoints authenticate via\nthe `api_key` query parameter (DEMO_KEY is available for limited\nuse). This specification covers commonly used endpoints across\nAPOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.\n",
+      "type": "text/plain"
+    }
+  }
+}

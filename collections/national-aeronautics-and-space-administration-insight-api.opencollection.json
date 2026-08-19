@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NASA Open APIs APOD InSight API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "InSight",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Per-Sol Mars weather summary from the InSight lander",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/insight_weather/",
+            "params": [
+              {
+                "name": "ver",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "feedtype",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Per-Sol Mars weather summary from the InSight lander"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

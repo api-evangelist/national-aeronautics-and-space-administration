@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NASA Open APIs APOD EPIC API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "EPIC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Most recent natural-color EPIC images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/EPIC/api/natural"
+          },
+          "docs": "Most recent natural-color EPIC images"
+        },
+        {
+          "info": {
+            "name": "Most recent enhanced-color EPIC images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/EPIC/api/enhanced"
+          },
+          "docs": "Most recent enhanced-color EPIC images"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

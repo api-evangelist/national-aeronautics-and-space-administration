@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NASA Open APIs APOD API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "APOD",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Astronomy Picture of the Day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nasa.gov/planetary/apod",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Astronomy Picture of the Day"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,169 @@
+{
+  "item": [
+    {
+      "id": "ce86e2f1-ba44-4e9c-ab04-6a3ceefb85d9",
+      "name": "APOD",
+      "description": {
+        "content": "Astronomy Picture of the Day.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0a99ce7c-2c60-4dbf-9f25-155d9c230476",
+          "name": "Astronomy Picture of the Day",
+          "request": {
+            "name": "Astronomy Picture of the Day",
+            "description": {},
+            "url": {
+              "path": [
+                "planetary",
+                "apod"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbs",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c87adaaf-64ec-4500-8bb9-b262381348b8",
+              "name": "APOD payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "planetary",
+                    "apod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "thumbs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nasa.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ba769c25-78cf-4146-ace3-ce1cbd7d19e2",
+    "name": "NASA Open APIs APOD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The api.nasa.gov portal hosts a federated set of NASA APIs covering\nimagery, science, and mission data. All endpoints authenticate via\nthe `api_key` query parameter (DEMO_KEY is available for limited\nuse). This specification covers commonly used endpoints across\nAPOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.\n",
+      "type": "text/plain"
+    }
+  }
+}
