@@ -247,6 +247,8 @@ apis:
   humanURL: https://api.nasa.gov/
   baseURL: https://api.nasa.gov/planetary/apod
   tags:
+  - Epic
+  tags_raw:
   - EPIC
   properties:
   - type: OpenAPI
@@ -258,6 +260,8 @@ apis:
   humanURL: https://api.nasa.gov/
   baseURL: https://api.nasa.gov/planetary/apod
   tags:
+  - Insight
+  tags_raw:
   - InSight
   properties:
   - type: OpenAPI
