@@ -166,6 +166,9 @@ apis:
   humanURL: https://tle.ivanstanojevic.me/
   baseURL: https://tle.ivanstanojevic.me/api
   tags:
+  - Satellite
+  - Orbital Data
+  tags_raw:
   - Satellites
   - Orbital Data
   properties:
