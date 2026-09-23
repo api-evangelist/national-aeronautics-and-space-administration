@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: NASA Open APIs APOD EPIC API
+  title: NASA Open EPIC API
   description: 'The api.nasa.gov portal hosts a federated set of NASA APIs covering
 
     imagery, science, and mission data. All endpoints authenticate via
@@ -9,9 +9,7 @@ info:
 
     use). This specification covers commonly used endpoints across
 
-    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.
-
-    '
+    APOD, NeoWs, DONKI, Earth, EPIC, Mars Rover Photos, and InSight.'
   version: '1.0'
 servers:
 - url: https://api.nasa.gov
